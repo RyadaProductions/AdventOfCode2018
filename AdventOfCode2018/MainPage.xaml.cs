@@ -3,8 +3,6 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using AdventOfCode2018.Views;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 namespace AdventOfCode2018
 {
     /// <summary>
@@ -15,13 +13,26 @@ namespace AdventOfCode2018
         public MainPage()
         {
             InitializeComponent();
+            ContentFrame.Navigate(typeof(Day1View));
         }
 
         private void NavigationView_OnItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
             var label = args.InvokedItem as string;
-            var pageType = typeof(Day1View);
-            if (pageType != ContentFrame.CurrentSourcePageType)
+            Type pageType = null;
+
+            // TODO: convert magic strings into constants, and bind to them from the view
+            switch (label)
+            {
+                case "Day 1":
+                    pageType = typeof(Day1View);
+                    break;
+                case "Day 2":
+                    pageType = typeof(Day2View);
+                    break;
+            }
+
+            if (pageType != null && pageType != ContentFrame.CurrentSourcePageType)
             {
                 ContentFrame.Navigate(pageType);
             }

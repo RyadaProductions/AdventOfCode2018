@@ -37,20 +37,27 @@ namespace AdventOfCode2018.ViewModels
 
         public Day1ViewModel()
         {
-            RunCommand = new RelayCommand(RunChallenge1);
+            RunCommand = new RelayCommand(RunChallenges);
         }
 
-        private void RunChallenge1()
+        private void RunChallenges()
         {
             if (string.IsNullOrWhiteSpace(Input)) return;
+
             var frequencyChanges = Input.Split('\r', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
 
+            RunChallenge1(frequencyChanges);
+            RunChallenge2(frequencyChanges);
+        }
+
+        private void RunChallenge1(List<int> frequencyChanges)
+        {
             Output = OutputFormat + frequencyChanges.Sum();
 
             RunChallenge2(frequencyChanges);
         }
 
-        private void RunChallenge2(List<int> frequencyChanges, int currentFrequency = 0)
+        private void RunChallenge2(IReadOnlyCollection<int> frequencyChanges, int currentFrequency = 0)
         {
             var visitedFrequencies = new List<int>();
 
