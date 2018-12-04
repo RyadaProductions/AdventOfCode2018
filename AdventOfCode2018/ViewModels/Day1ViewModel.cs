@@ -44,13 +44,16 @@ namespace AdventOfCode2018.ViewModels
         {
             if (string.IsNullOrWhiteSpace(Input)) return;
 
-            var frequencyChanges = Input.Split('\r', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+            // Input format: +10
+            var frequencyChanges = Input.Split('\r', StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse)
+                .ToList();
 
             RunChallenge1(frequencyChanges);
             RunChallenge2(frequencyChanges);
         }
 
-        private void RunChallenge1(List<int> frequencyChanges)
+        private void RunChallenge1(IEnumerable<int> frequencyChanges)
         {
             Output = OutputFormat + frequencyChanges.Sum();
         }

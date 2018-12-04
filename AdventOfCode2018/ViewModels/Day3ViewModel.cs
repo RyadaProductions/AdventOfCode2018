@@ -49,7 +49,7 @@ namespace AdventOfCode2018.ViewModels
         {
             if (string.IsNullOrWhiteSpace(Input)) return;
 
-            // input format: #33 @ 525,695: 22x23
+            // Input format: #33 @ 525,695: 22x23
             var lines = Input.Split('\r', StringSplitOptions.RemoveEmptyEntries);
             var fabricSquares = new List<FabricClaimModel>();
 

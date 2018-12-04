@@ -43,6 +43,7 @@ namespace AdventOfCode2018.ViewModels
         {
             if (string.IsNullOrWhiteSpace(Input)) return;
 
+            // Input format: asdhasdhjkash
             var boxIds = Input.Split('\r', StringSplitOptions.RemoveEmptyEntries);
 
             RunChallenge1(boxIds);
