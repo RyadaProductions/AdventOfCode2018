@@ -14,6 +14,7 @@
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Day 1" ToolTipService.ToolTip="Advent of code day 1" />
                 <NavigationViewItem Content="Day 2" ToolTipService.ToolTip="Advent of code day 2" />
+                <NavigationViewItem Content="Day 3" ToolTipService.ToolTip="Advent of code day 3" />
             </NavigationView.MenuItems>
 
             <NavigationView.PaneFooter>

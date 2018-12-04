@@ -53,8 +53,6 @@ namespace AdventOfCode2018.ViewModels
         private void RunChallenge1(List<int> frequencyChanges)
         {
             Output = OutputFormat + frequencyChanges.Sum();
-
-            RunChallenge2(frequencyChanges);
         }
 
         private void RunChallenge2(IReadOnlyCollection<int> frequencyChanges, int currentFrequency = 0)

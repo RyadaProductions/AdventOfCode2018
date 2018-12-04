@@ -61,8 +61,6 @@ namespace AdventOfCode2018.ViewModels
             }
 
             Output = OutputFormat + doubles * triples;
-
-            RunChallenge2(boxIds);
         }
 
         private void RunChallenge2(string[] boxIds)

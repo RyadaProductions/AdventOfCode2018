@@ -30,6 +30,9 @@ namespace AdventOfCode2018
                 case "Day 2":
                     pageType = typeof(Day2View);
                     break;
+                case "Day 3":
+                    pageType = typeof(Day3View);
+                    break;
             }
 
             if (pageType != null && pageType != ContentFrame.CurrentSourcePageType)
