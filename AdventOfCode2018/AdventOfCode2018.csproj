@@ -123,6 +123,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\FabricClaimModel.cs" />
+    <Compile Include="Models\ShiftModel.cs" />
     <Compile Include="Mvvm\BasePage.cs" />
     <Compile Include="Mvvm\BaseViewModel.cs" />
     <Compile Include="Mvvm\RelayCommand.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="ViewModels\Day1ViewModel.cs" />
     <Compile Include="ViewModels\Day2ViewModel.cs" />
     <Compile Include="ViewModels\Day3ViewModel.cs" />
+    <Compile Include="ViewModels\Day4ViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\Day1View.xaml.cs">
       <DependentUpon>Day1View.xaml</DependentUpon>
@@ -139,6 +141,9 @@
     </Compile>
     <Compile Include="Views\Day3View.xaml.cs">
       <DependentUpon>Day3View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Day4View.xaml.cs">
+      <DependentUpon>Day4View.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +180,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Day3View.xaml" />
+    <Page Include="Views\Day4View.xaml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">

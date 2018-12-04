@@ -22,9 +22,9 @@ namespace AdventOfCode2018
         }
 
         private void NavigationView_OnItemInvoked(NavigationView navigationView,
-            NavigationViewItemInvokedEventArgs args)
+          NavigationViewItemInvokedEventArgs args)
         {
-            var label = args.InvokedItem as string;
+            var label = args.InvokedItemContainer.Content as string;
             NavigateTo(label);
         }
 
@@ -43,6 +43,9 @@ namespace AdventOfCode2018
                     break;
                 case "Day 3":
                     pageType = typeof(Day3View);
+                    break;
+                case "Day 4":
+                    pageType = typeof(Day4View);
                     break;
             }
 

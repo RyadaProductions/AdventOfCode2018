@@ -8,10 +8,10 @@ namespace AdventOfCode2018.Mvvm
 
         public BasePage()
         {
-            DataContextChanged += (sender, eventArgs) => { SetVmInDataContext(); };
+            DataContextChanged += (sender, eventArgs) => { SetViewModelBasedOnDataContext(); };
         }
 
-        public void SetVmInDataContext()
+        public void SetViewModelBasedOnDataContext()
         {
             var viewModelProperty = GetType().GetProperty(ViewModelPropertyName);
             if (viewModelProperty != null)

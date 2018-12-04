@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Text="Input:" Margin="0 0 0 10" />
-        <TextBox Grid.Row="1" Text="{x:Bind ViewModel.Input, Mode=TwoWay}"
+        <TextBox Grid.Row="1" Text="{x:Bind ViewModel.Input, Mode=TwoWay}" 
                  ToolTipService.ToolTip="Format: Delimited list of numbers"
                  PlaceholderText="Place input here" TextWrapping="Wrap" AcceptsReturn="True" Margin="0 0 20 0" />
 
