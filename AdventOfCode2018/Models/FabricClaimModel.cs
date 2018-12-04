@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2018.Models
 {
-    public class FabricSquareModel
+    public class FabricClaimModel
     {
         public int ClaimId { get; }
         
@@ -12,7 +12,7 @@
         
         public int Height { get; }
 
-        public FabricSquareModel(int claimId, int xCoordinate, int yCoordinate, int width, int height)
+        public FabricClaimModel(int claimId, int xCoordinate, int yCoordinate, int width, int height)
         {
             ClaimId = claimId;
             XCoordinate = xCoordinate;

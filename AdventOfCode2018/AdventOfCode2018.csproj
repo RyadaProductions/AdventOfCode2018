@@ -122,7 +122,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\FabricSquareModel.cs" />
+    <Compile Include="Models\FabricClaimModel.cs" />
     <Compile Include="Mvvm\BasePage.cs" />
     <Compile Include="Mvvm\BaseViewModel.cs" />
     <Compile Include="Mvvm\RelayCommand.cs" />

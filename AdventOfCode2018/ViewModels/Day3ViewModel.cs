@@ -51,7 +51,7 @@ namespace AdventOfCode2018.ViewModels
 
             // input format: #33 @ 525,695: 22x23
             var lines = Input.Split('\r', StringSplitOptions.RemoveEmptyEntries);
-            var fabricSquares = new List<FabricSquareModel>();
+            var fabricSquares = new List<FabricClaimModel>();
 
             foreach (var line in lines)
             {
@@ -65,14 +65,14 @@ namespace AdventOfCode2018.ViewModels
                 var width = int.Parse(values[2].Split('x')[0]);
                 var height = int.Parse(values[2].Split('x')[1]);
 
-                fabricSquares.Add(new FabricSquareModel(claimId, xCoordinate, yCoordinate, width, height));
+                fabricSquares.Add(new FabricClaimModel(claimId, xCoordinate, yCoordinate, width, height));
             }
 
             RunChallenge1(fabricSquares);
             RunChallenge2(fabricSquares);
         }
 
-        private void RunChallenge1(IEnumerable<FabricSquareModel> fabricSquares)
+        private void RunChallenge1(IEnumerable<FabricClaimModel> fabricSquares)
         {
             foreach (var fabricSquare in fabricSquares)
             {
@@ -98,7 +98,7 @@ namespace AdventOfCode2018.ViewModels
             Output = OutputFormat + duplicateInches;
         }
 
-        private void RunChallenge2(IEnumerable<FabricSquareModel> fabricSquares)
+        private void RunChallenge2(IEnumerable<FabricClaimModel> fabricSquares)
         {
             foreach (var fabricSquare in fabricSquares)
             {
@@ -109,9 +109,10 @@ namespace AdventOfCode2018.ViewModels
                 {
                     for (var yOffset = 0; yOffset < fabricSquare.Height; yOffset++)
                     {
-                        if (_fabricInches[fabricSquare.XCoordinate + xOffset, fabricSquare.YCoordinate + yOffset] ==
-                            fabricSquare.ClaimId) nonDuplicateClaimSize++;
-
+                        var xCoordinate = fabricSquare.XCoordinate + xOffset;
+                        var yCoordinate = fabricSquare.YCoordinate + yOffset;
+                        
+                        if (_fabricInches[xCoordinate, yCoordinate] == fabricSquare.ClaimId) nonDuplicateClaimSize++;
 
                         if (squareSize != nonDuplicateClaimSize) continue;
 
