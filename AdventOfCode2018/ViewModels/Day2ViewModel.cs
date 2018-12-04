@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using AdventOfCode2018.Mvvm;
@@ -50,7 +51,7 @@ namespace AdventOfCode2018.ViewModels
             RunChallenge2(boxIds);
         }
 
-        private void RunChallenge1(string[] boxIds)
+        private void RunChallenge1(IEnumerable<string> boxIds)
         {
             var doubles = 0;
             var triples = 0;

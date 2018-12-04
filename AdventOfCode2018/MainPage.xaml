@@ -1,34 +1,38 @@
-﻿<Page
-    x:Class="AdventOfCode2018.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:AdventOfCode2018"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+﻿<mvvm:BasePage x:Class="AdventOfCode2018.MainPage"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:local="using:AdventOfCode2018"
+               xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+               xmlns:mvvm="using:AdventOfCode2018.Mvvm"
+               mc:Ignorable="d"
+               Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <NavigationView OpenPaneLength="200" AlwaysShowHeader="False" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" ItemInvoked="NavigationView_OnItemInvoked" Header="Advent of Code 2018">
+        <controls:NavigationView OpenPaneLength="215" AlwaysShowHeader="True" IsSettingsVisible="False"
+                                 IsBackButtonVisible="Collapsed" ItemInvoked="NavigationView_OnItemInvoked"
+                                 PaneTitle="Advent of Code 2018" Header="{x:Bind ViewModel.Header, Mode=OneWay}"
+                                 PaneDisplayMode="LeftMinimal">
 
-            <NavigationView.MenuItems>
-                <NavigationViewItem Content="Day 1" ToolTipService.ToolTip="Advent of code day 1" />
-                <NavigationViewItem Content="Day 2" ToolTipService.ToolTip="Advent of code day 2" />
-                <NavigationViewItem Content="Day 3" ToolTipService.ToolTip="Advent of code day 3" />
-            </NavigationView.MenuItems>
+            <controls:NavigationView.MenuItems>
+                <NavigationViewItem Content="Day 1" Width="199" ToolTipService.ToolTip="Advent of code day 1" />
+                <NavigationViewItem Content="Day 2" Width="199" ToolTipService.ToolTip="Advent of code day 2" />
+                <NavigationViewItem Content="Day 3" Width="199" ToolTipService.ToolTip="Advent of code day 3" />
+            </controls:NavigationView.MenuItems>
 
-            <NavigationView.PaneFooter>
+            <controls:NavigationView.PaneFooter>
                 <StackPanel>
                     <NavigationViewItem
                         Content="Ryada Productions"
                         ToolTipService.ToolTip="Developed by Ryada Productions"
                         Tapped="OnRyadaProductionsTapped">
                         <NavigationViewItem.Icon>
-                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE943;"/>
+                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE943;" />
                         </NavigationViewItem.Icon>
                     </NavigationViewItem>
                 </StackPanel>
-            </NavigationView.PaneFooter>
+            </controls:NavigationView.PaneFooter>
 
             <Frame x:Name="ContentFrame" Margin="20,0,0,0">
                 <Frame.ContentTransitions>
@@ -41,6 +45,6 @@
                     </TransitionCollection>
                 </Frame.ContentTransitions>
             </Frame>
-        </NavigationView>
+        </controls:NavigationView>
     </Grid>
-</Page>
+</mvvm:BasePage>

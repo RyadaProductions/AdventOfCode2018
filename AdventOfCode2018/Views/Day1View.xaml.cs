@@ -10,12 +10,12 @@ namespace AdventOfCode2018.Views
     /// </summary>
     public sealed partial class Day1View : BasePage
     {
+        public Day1ViewModel ViewModel { get; set; }
+        
         public Day1View()
         {
             DataContext = new Day1ViewModel();
             InitializeComponent();
         }
-
-        public Day1ViewModel ViewModel { get; set; }
     }
 }

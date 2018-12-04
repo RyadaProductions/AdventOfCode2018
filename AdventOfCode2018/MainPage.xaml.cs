@@ -1,6 +1,8 @@
 ﻿using System;
-using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Controls;
+using AdventOfCode2018.Mvvm;
+using AdventOfCode2018.ViewModels;
 using AdventOfCode2018.Views;
 
 namespace AdventOfCode2018
@@ -8,21 +10,30 @@ namespace AdventOfCode2018
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage : BasePage
     {
+        public MainPageViewModel ViewModel { get; set; }
+
         public MainPage()
         {
+            DataContext = new MainPageViewModel();
             InitializeComponent();
-            ContentFrame.Navigate(typeof(Day1View));
+            NavigateTo("Day 1");
         }
 
-        private void NavigationView_OnItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        private void NavigationView_OnItemInvoked(NavigationView navigationView,
+            NavigationViewItemInvokedEventArgs args)
         {
             var label = args.InvokedItem as string;
+            NavigateTo(label);
+        }
+
+        private void NavigateTo(string pageName)
+        {
             Type pageType = null;
 
             // TODO: convert magic strings into constants, and bind to them from the view
-            switch (label)
+            switch (pageName)
             {
                 case "Day 1":
                     pageType = typeof(Day1View);
@@ -35,10 +46,10 @@ namespace AdventOfCode2018
                     break;
             }
 
-            if (pageType != null && pageType != ContentFrame.CurrentSourcePageType)
-            {
-                ContentFrame.Navigate(pageType);
-            }
+            if (pageType == null || pageType == ContentFrame.CurrentSourcePageType) return;
+
+            ViewModel.Header = pageName;
+            ContentFrame.Navigate(pageType);
         }
 
         private async void OnRyadaProductionsTapped(object sender, TappedRoutedEventArgs e)

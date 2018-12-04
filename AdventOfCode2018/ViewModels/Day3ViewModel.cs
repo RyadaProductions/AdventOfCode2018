@@ -111,7 +111,7 @@ namespace AdventOfCode2018.ViewModels
                     {
                         var xCoordinate = fabricSquare.XCoordinate + xOffset;
                         var yCoordinate = fabricSquare.YCoordinate + yOffset;
-                        
+
                         if (_fabricInches[xCoordinate, yCoordinate] == fabricSquare.ClaimId) nonDuplicateClaimSize++;
 
                         if (squareSize != nonDuplicateClaimSize) continue;

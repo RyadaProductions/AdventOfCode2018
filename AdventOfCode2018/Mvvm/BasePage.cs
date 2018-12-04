@@ -17,6 +17,5 @@ namespace AdventOfCode2018.Mvvm
             if (viewModelProperty != null)
                 viewModelProperty.SetMethod.Invoke(this, new[] {DataContext});
         }
-
     }
 }

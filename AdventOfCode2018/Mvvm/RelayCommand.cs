@@ -14,6 +14,7 @@ namespace AdventOfCode2018.Mvvm
     {
         private readonly Action _execute;
         private readonly Func<bool> _canExecute;
+
         /// <summary>
         /// Raised when RaiseCanExecuteChanged is called.
         /// </summary>
@@ -25,7 +26,6 @@ namespace AdventOfCode2018.Mvvm
         /// <param name="execute">The execution logic.</param>
         public RelayCommand(Action execute) : this(execute, null)
         {
-
         }
 
         /// <summary>
