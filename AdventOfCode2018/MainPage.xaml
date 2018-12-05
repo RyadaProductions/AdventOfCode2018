@@ -13,13 +13,14 @@
         <controls:NavigationView OpenPaneLength="215" AlwaysShowHeader="True" IsSettingsVisible="False"
                                  IsBackButtonVisible="Collapsed" ItemInvoked="NavigationView_OnItemInvoked"
                                  PaneTitle="Advent of Code 2018" Header="{x:Bind ViewModel.Header, Mode=OneWay}"
-                                 PaneDisplayMode="LeftMinimal">
+                                 PaneDisplayMode="Left">
 
             <controls:NavigationView.MenuItems>
                 <controls:NavigationViewItem Content="Day 1" ToolTipService.ToolTip="Advent of code day 1" />
                 <controls:NavigationViewItem Content="Day 2" ToolTipService.ToolTip="Advent of code day 2" />
                 <controls:NavigationViewItem Content="Day 3" ToolTipService.ToolTip="Advent of code day 3" />
                 <controls:NavigationViewItem Content="Day 4" ToolTipService.ToolTip="Advent of code day 4" />
+                <controls:NavigationViewItem Content="Day 5" ToolTipService.ToolTip="Advent of code day 5" />
             </controls:NavigationView.MenuItems>
 
             <controls:NavigationView.PaneFooter>
